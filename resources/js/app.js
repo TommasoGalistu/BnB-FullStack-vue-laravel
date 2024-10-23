@@ -7,7 +7,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import 'bootstrap';  // Importa JavaScript di Bootstrap
 import '../scss/_variables.scss';
 import '../scss/_dashboard.scss';
-
+import PaymentComponent from './pages/components/PaymentComponent.vue';
 import router from './router/index';
 import App from './App.vue'
 
@@ -27,6 +27,7 @@ library.add(faCaretDown);
 
 import { createApp } from 'vue';
 const app = createApp(App)
+app.component('payment-component', PaymentComponent)
 app.component('font-awesome-icon', FontAwesomeIcon)
 app.use(router)
 app.mount('#app')

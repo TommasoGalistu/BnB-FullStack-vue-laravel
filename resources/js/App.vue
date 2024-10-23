@@ -2,6 +2,7 @@
 import { store } from "./store/store.js";
 import Header from "./partials/Header.vue";
 import Footer from "./partials/Footer.vue";
+import PaymentComponent from "./pages/components/PaymentComponent.vue";
 export default {
   name: "App",
   data() {
@@ -10,6 +11,7 @@ export default {
   components: {
     Header,
     Footer,
+    PaymentComponent,
   },
   methods: {
     fillData() {
@@ -83,6 +85,7 @@ export default {
 <template>
   <Header />
   <main>
+    <PaymentComponent />
     <router-view></router-view>
   </main>
 

@@ -33,11 +33,16 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
+
 </head>
 
 <body>
 
-    <div id="app"></div>
+    <div id="app">
+
+    </div>
+    {{-- payment cdn  --}}
+<script src="https://js.braintreegateway.com/web/dropin/1.31.0/js/dropin.min.js"></script>
 
 </body>
 
