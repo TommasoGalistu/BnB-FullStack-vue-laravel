@@ -119,7 +119,7 @@ export default {
   mounted() {
     // console.log("user apartment", store.userApartment[0].sponsors[0].category);
     axios
-      .get("/api/user")
+      .get("http://127.0.0.1:8000/api/user")
       .then((res) => {
         this.name = res.data.name;
       })

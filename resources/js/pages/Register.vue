@@ -25,11 +25,10 @@ export default {
         // email_verified_at: "",
       },
 
-      toastMessage:''
+      toastMessage: "",
     };
   },
   methods: {
-
     showToast(text, type = "success") {
       //metodo che permette di mostrare il toast
 
@@ -62,16 +61,15 @@ export default {
       toast.hide();
     },
 
-
     submit() {
       axios
-        .post("/api/register", this.user)
+        .post("http://127.0.0.1:8000/api/register", this.user)
         .then(() => {
           store.is_logged = true;
 
           // get a data of user
           axios
-            .get("/api/user")
+            .get("http://127.0.0.1:8000/api/user")
             .then((response) => {
               store.user = response.data;
               if (response.data.name) {
@@ -79,14 +77,14 @@ export default {
               } else {
                 store.userName = "Profilo";
               }
-            //   toast success per home
+              //   toast success per home
               this.$router.push({
                 name: "home",
                 query: {
-                    toastMessage: `Registrazione avvenuta con successo`,
-                    toastType:"success"
-                }
-             });
+                  toastMessage: `Registrazione avvenuta con successo`,
+                  toastType: "success",
+                },
+              });
               console.log("app- user e user name: ok");
             })
             .catch((err) => {
@@ -105,8 +103,13 @@ export default {
             // Errore con risposta dal server
             console.log("Errore:", err.response.data);
             // errore se mail già nel db
-            if (err.response.data.message === 'The email has already been taken.'){
-                this.showToast("L'email è già associata ad un altro account", "error");
+            if (
+              err.response.data.message === "The email has already been taken."
+            ) {
+              this.showToast(
+                "L'email è già associata ad un altro account",
+                "error"
+              );
             }
             console.log("Stato HTTP:", err.response.status);
             console.log("Headers:", err.response.headers);

@@ -268,6 +268,7 @@ export default {
   },
   mounted() {
     this.findApartment(this.$route.params.id);
+
     // console.log(store.allApartments[this.$route.params.id - 1]);
     // nextTick fa in modo che il DOM sia completamente pronto
   },
@@ -276,6 +277,7 @@ export default {
 
 
 <template>
+  {{ apartmentFiltred.image }}
   <div v-if="apartmentFiltred">
     <div class="container mt-5">
       <!-- Titolo dell'appartamento -->
@@ -293,7 +295,7 @@ export default {
         <div class="col-12">
           <div v-if="apartment.image" class="image-container mb-4">
             <img
-              :src="apartment.image"
+              :src="`http://localhost:8000/${apartment.image}`"
               :alt="apartment.name"
               class="img-fluid rounded shadow-sm"
             />

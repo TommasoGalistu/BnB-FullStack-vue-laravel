@@ -26,12 +26,12 @@ export default {
   methods: {
     // call axios for logout
     logout() {
-      axios.get("/sanctum/csrf-cookie").then(() => {
+      axios.get("http://127.0.0.1:8000/sanctum/csrf-cookie").then(() => {
         axios
-          .post("/api/logout")
+          .post("http://127.0.0.1:8000/api/logout")
           .then((response) => {
             axios
-              .get("/api/user")
+              .get("http://127.0.0.1:8000/api/user")
               .then((response) => {
                 store.user = response.data;
                 if (response.data.name) {

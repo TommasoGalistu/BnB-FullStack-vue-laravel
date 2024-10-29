@@ -46,12 +46,12 @@ export default {
 
     submit() {
       axios
-        .post("/api/login", this.user)
+        .post("http://127.0.0.1:8000/api/login", this.user)
         .then(() => {
           store.is_logged = true;
           // get a data of user
           axios
-            .get("/api/user")
+            .get("http://127.0.0.1:8000/api/user")
             .then((response) => {
               store.user = response.data;
               if (response.data.name) {
