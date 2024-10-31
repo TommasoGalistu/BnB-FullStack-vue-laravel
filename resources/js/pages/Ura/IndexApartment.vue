@@ -13,6 +13,7 @@ export default {
       name: "",
       toastMessage: "",
       sponsorType: "nulla",
+      apartments: "",
     };
   },
   methods: {
@@ -149,6 +150,7 @@ export default {
       .get("api/user/utente/dashboard")
       .then((response) => {
         store.userApartment = response.data;
+        this.apartments = store.userApartment;
       })
       .catch((err) => {
         console.log(err);
@@ -215,7 +217,7 @@ export default {
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="apartment in apartmentFiltred" :key="apartment.id">
+                <tr v-for="apartment in apartments" :key="apartment.id">
                   <td scope="row" class="align-middle">
                     {{ apartment.id }}
                   </td>
