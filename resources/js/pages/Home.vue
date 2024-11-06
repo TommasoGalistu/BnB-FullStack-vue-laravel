@@ -10,10 +10,28 @@ export default {
     return {
       store: store,
 
+    slides: [
+        '/slider_img/jumbo1.jpg',
+        '/slider_img/jumbo2.jpg',
+        '/slider_img/jumbo3.jpg',
+        '/slider_img/jumbo4.jpg'
+    ],
+      activeSlide: 0,
+
       toastMessage: "",
     };
   },
   methods: {
+
+    changeSlide(){
+        this.activeSlide++;
+
+        if(this.activeSlide > this.slides.length - 1) {
+            this.activeSlide = 0;
+        }
+
+    },
+
     showToast(message, type = "success") {
       //metodo che permette di mostrare il toast
 
@@ -46,6 +64,8 @@ export default {
     },
   },
   mounted() {
+
+    setInterval(this.changeSlide, 3000);
     //   all apartment
     sessionStorage.setItem("access", true);
     axios
@@ -122,7 +142,7 @@ export default {
 
      <!-- jumbotron -->
     <div class="row jumbo-container">
-        <div class="col-6 m-0 jumbo-text">
+        <div class="col-12 col-lg-6 m-0 jumbo-text">
             <h1>
                 E' ora di cambiare aria!
             </h1>
@@ -132,8 +152,8 @@ export default {
             </h3>
         </div>
 
-        <div class="col-6 m-0 p-0">
-            <img class="img-fluid" src="../../../public/jumbo_image.jpg" alt="jumbo-image">
+        <div class="col-6 d-none d-lg-block m-0 p-0">
+            <img class="img-fluid" :src="slides[activeSlide]" alt="jumbo-image">
         </div>
     </div>
 
@@ -206,7 +226,11 @@ export default {
         font-weight: 800;
         font-size: 4rem;
         margin-bottom: 2rem;
+        @media (max-width: 1199.98px) {
+            font-size: 3rem
+        }
     }
+
 
 
 }
