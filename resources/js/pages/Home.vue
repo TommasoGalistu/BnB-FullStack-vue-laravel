@@ -116,8 +116,27 @@ export default {
     </div>
   </div> -->
 
+
   <!-- card -->
   <div class="container-fluid mx-auto" v-if="!isLoading">
+
+     <!-- jumbotron -->
+    <div class="row jumbo-container">
+        <div class="col-6 m-0 jumbo-text">
+            <h1>
+                E' ora di cambiare aria!
+            </h1>
+
+            <h3>
+                Cerca tra i nostri appartamenti e trova quello che fa per te!
+            </h3>
+        </div>
+
+        <div class="col-6 m-0 p-0">
+            <img class="img-fluid" src="../../../public/jumbo_image.jpg" alt="jumbo-image">
+        </div>
+    </div>
+
     <div class="row pt-5">
       <router-link
         class="col-lg-4 col-xl-3 col-md-6 col-sm-6 mb-4"
@@ -174,6 +193,24 @@ export default {
 </template>
 <style lang='scss' scoped>
 // @use 'path' as *;
+.jumbo-container{
+    max-height: 500px;;
+}
+
+.jumbo-text{
+    color: white;
+    background-color: rgb(255, 87, 87);
+    padding: 2rem;
+
+    h1{
+        font-weight: 800;
+        font-size: 4rem;
+        margin-bottom: 2rem;
+    }
+
+
+}
+
 .card {
   max-width: 100%;
   margin: 10px auto;
