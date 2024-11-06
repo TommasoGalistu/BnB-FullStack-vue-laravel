@@ -234,7 +234,7 @@ export default {
 </script>
 <template>
   <div
-    class="ms_container d-flex flex-column align-items-center justify-content-center"
+    class="ms_container d-flex flex-column align-items-center justify-content-center mb-5"
   >
     <div class="d-flex justify-content-center align-items-center gap-4">
       <h3 class="mt-4">Visualizzazioni per {{ title }}</h3>
@@ -251,7 +251,7 @@ export default {
         </select>
       </div>
     </div>
-    <canvas id="myChart"></canvas>
+    <canvas id="myChart" class="mb-4"></canvas>
   </div>
 </template>
 <style lang='scss' scoped>
