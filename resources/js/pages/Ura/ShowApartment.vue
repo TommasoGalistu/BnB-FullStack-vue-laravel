@@ -428,13 +428,7 @@ export default {
           <div class="col">
             <h3 class="section-title my-3">Descrizione</h3>
             <p class="description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-              iste explicabo nihil, ex totam debitis adipisci ullam! Sunt
-              obcaecati fugiat magni, exercitationem ab aliquid voluptates
-              corrupti earum debitis iusto nam porro dignissimos dolor dolore
-              illum quidem ipsum perspiciatis magnam alias veritatis voluptate
-              ipsam labore aspernatur. Sunt voluptate maiores qui asperiores
-              deleniti quidem iste aperiam, vel et eveniet?
+              {{ apartment.description }}
             </p>
           </div>
         </div>
