@@ -30,7 +30,7 @@ return new class extends Migration
             $table->unsignedSmallInteger('number_bathrooms');
             $table->unsignedInteger('square_meters');
             $table->boolean('is_visible')->default(true);
-            $table->string('description', 1000);
+            $table->text('description', 1000)->nullable();
             $table->string('address');
             $table->double('lat', 7, 5);
             $table->double('lon', 7, 5);

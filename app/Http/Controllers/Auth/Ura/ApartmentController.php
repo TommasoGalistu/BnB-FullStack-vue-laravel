@@ -64,9 +64,6 @@ class ApartmentController extends Controller
         $apartment->save();
         $apartment->services()->attach($data['services']);
 
-
-
-
         return response()->json($apartment, 200);
     }
 

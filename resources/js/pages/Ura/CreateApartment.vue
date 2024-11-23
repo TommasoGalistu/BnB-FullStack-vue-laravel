@@ -431,6 +431,21 @@ export default {
                 </div>
 
                 <div class="row">
+                    <div v-if="isAproveStreet" class="mb-3 col-12">
+                        <label for="description" class="col-form-label"
+                        >Descrizione:</label
+                        >
+                        <textarea
+                        class="form-control"
+                        id="description"
+                        name="description"
+                        rows="8"
+                        v-model="apartment.description"
+                        ></textarea>
+                    </div>
+                </div>
+
+                <div class="row">
                   <div v-if="isAproveStreet" class="mb-3 col-12">
                     <label for="image" class="col-form-label"
                       >Carica un'immagine:</label
