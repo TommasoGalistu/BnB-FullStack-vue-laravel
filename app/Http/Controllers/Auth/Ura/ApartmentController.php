@@ -40,6 +40,7 @@ class ApartmentController extends Controller
 
 
 
+
         // Gestione dell'immagine caricata
         $imagePath = null;
         if ($request->hasFile('image')) {
@@ -59,7 +60,6 @@ class ApartmentController extends Controller
         } else {
             $data['image'] = 'storage/uploads/default/1.jpg';
         }
-
         $apartment = Apartment::create($data);
         $apartment->save();
         $apartment->services()->attach($data['services']);

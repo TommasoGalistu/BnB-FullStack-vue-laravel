@@ -10,15 +10,17 @@ export default {
     return {
       //
       apartment: {
-        title: "",
+        title: "PROVA APPARTAMENTO ",
         address: "",
+        description:
+          "Nel cuore di Roma, questo appartamento unisce il fascino della tradizione con dettagli moderni. Situato in un elegante edificio storico, l’immobile accoglie con spazi luminosi, soffitti alti e materiali pregiati che valorizzano ogni ambiente.Un soggiorno raffinato si apre su scorci pittoreschi, mentre la cucina, dal design contemporaneo, offre funzionalità e stile. La zona notte, pensata per il massimo comfort, è completata da bagni curati nei minimi dettagli, con finiture eleganti e linee pulite.Perfetto per chi cerca un’abitazione che rifletta il carattere unico della città, combinando charme storico e comodità attuali.",
         lat: "",
         lon: "",
-        number_rooms: "",
-        number_beds: "",
-        number_bathrooms: "",
+        number_rooms: 1,
+        number_beds: 1,
+        number_bathrooms: 1,
 
-        square_meters: "",
+        square_meters: 100,
         services: [],
       },
       services: [],
@@ -26,10 +28,10 @@ export default {
       imagePreview: "", // Aggiunto per gestire l'anteprima dell'immagine
       isAproveStreet: false,
       errors: {},
-      street: "",
-      number: "",
-      city: "",
-      postalCode: "",
+      street: "via del babbuino ",
+      number: "62",
+      city: "roma",
+      postalCode: "00183",
       place: "",
       resultOfSearch: "",
       activeButton: true,
@@ -84,6 +86,10 @@ export default {
         ) {
           this.errors.square_meters =
             "I metri quadri devono essere maggiori di 0.";
+        }
+        if (this.apartment.description.length < 10) {
+          this.errors.description =
+            "Scrivi una descrizione di almeno 10 caratteri";
         }
       }
 
@@ -476,7 +482,23 @@ export default {
                     </div>
                   </div>
                 </div>
-
+                <div class="row">
+                  <div v-if="isAproveStreet" class="mb-3 col-12">
+                    <label for="description" class="col-form-label"
+                      >descrizione:</label
+                    >
+                    <textarea
+                      type="text"
+                      class="form-control"
+                      id="description"
+                      name="description"
+                      v-model="apartment.description"
+                    />
+                    <span v-if="errors.description" class="text-danger">{{
+                      errors.square_meters
+                    }}</span>
+                  </div>
+                </div>
                 <button
                   @click="submit"
                   class="btn btn-dark"

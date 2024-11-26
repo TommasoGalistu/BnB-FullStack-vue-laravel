@@ -51,7 +51,7 @@ export default {
           store.is_logged = true;
           // get a data of user
           axios
-            .get("/api/user")
+            .get("api/user")
             .then((response) => {
               store.user = response.data;
               store.is_logged = true;

@@ -12,6 +12,7 @@ import router from './router/index';
 import App from './App.vue';
 import BraintreePlugin from './plugins/braintree';
 
+axios.defaults.baseURL = 'http://127.0.0.1:8000/';
 // Importazioni core di FontAwesome
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
